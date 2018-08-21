@@ -1,13 +1,13 @@
 ThisBuild / organization := "com.example"
 ThisBuild / scalaVersion := "2.12.6"
-ThisBuild / version := "1.0-SNAPSHOT"
+ThisBuild / version := "0.1"
 
 val rpRequiredAlpinePackages = settingKey[Seq[String]]("")
 
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala, SbtReactiveAppPlugin)
   .settings(
-    name := """play-hello""",
+    name := "play-hello-certification",
     libraryDependencies += guice,
     libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
     endpoints := HttpEndpoint(
