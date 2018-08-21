@@ -10,3 +10,10 @@ I've taken Play Hello world app, applied Lightbend Orchestration, and sustituted
 ### status
 
 Owner: Tooling team / Karl
+
+### notes
+
+```
+docker tag 0590c5fe5c9c scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.1
+docker push scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.1
+```
