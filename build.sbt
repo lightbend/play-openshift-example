@@ -18,7 +18,7 @@ lazy val root = (project in file("."))
         paths = Vector("/")
       )
     ) :: Nil,
-    dockerBaseImage := "jboss/base-jdk:8",
+    dockerBaseImage := "registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.4-6.1533127995",
     rpRequiredAlpinePackages := Nil
   )
 
