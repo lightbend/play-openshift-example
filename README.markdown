@@ -14,6 +14,8 @@ Owner: Tooling team / Karl
 ### notes
 
 ```
-docker tag 0590c5fe5c9c scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.1
-docker push scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.1
+eval $(minikube docker-env)
+sbt Docker/publishLocal
+docker tag 2387c0e7fbf4  scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.9
+docker push scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.9
 ```
