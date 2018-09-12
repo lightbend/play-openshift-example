@@ -1,21 +1,26 @@
-Lightbend Red Hat Certification
-===============================
+Play OpenShift Example
+======================
 
-### what is this?
+### What is this?
 
-This is a sample app we are creating so Lightbend can become certified on OpenShift Platform.
+This is a Play example on OpenShift Platform.
 
-I've taken Play Hello world app, applied Lightbend Orchestration, and sustituted the base image to "registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift" <https://github.com/jboss-dockerfiles/base-jdk>.
+### How do I use it?
 
-### status
+```
+docker pull lightbend-docker-registry.bintray.io/lightbend/play-openshift-example:0.10
+docker run -p 9000:9000 lightbend-docker-registry.bintray.io/lightbend/play-openshift-example:0.10 bin/play-openshift-example -Dplay.http.secret.key=changeme1
+```
+
+This runs Play on port 9000.
+
+```
+[info] play.api.Play - Application started (Prod)
+[info] p.c.s.AkkaHttpServer - Listening for HTTP on /0.0.0.0:9000
+```
+
+Open http://localhost:9000/ in your browser, and Ctrl + C to quit.
+
+### Status
 
 Owner: Tooling team / Karl
-
-### notes
-
-```
-eval $(minikube docker-env)
-sbt Docker/publishLocal
-docker tag 2387c0e7fbf4  scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.9
-docker push scan.connect.redhat.com/ospid-27a7763d-9768-4cb2-8f40-48a656332443/play-hello-certification:0.9
-```

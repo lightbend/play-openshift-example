@@ -2,7 +2,7 @@ import com.typesafe.sbt.packager.docker._
 
 ThisBuild / organization := "com.example"
 ThisBuild / scalaVersion := "2.12.6"
-ThisBuild / version := "0.9"
+ThisBuild / version := "0.10"
 ThisBuild / description := "Hello world Play application"
 
 val rpRequiredAlpinePackages = settingKey[Seq[String]]("")
@@ -10,7 +10,7 @@ val rpRequiredAlpinePackages = settingKey[Seq[String]]("")
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala, SbtReactiveAppPlugin)
   .settings(
-    name := "play-hello-certification",
+    name := "play-openshift-example",
     libraryDependencies += guice,
     libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
     endpoints := HttpEndpoint(
@@ -24,7 +24,7 @@ lazy val root = (project in file("."))
     dockerBaseImage := "registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.4-6.1533127995",
     rpRequiredAlpinePackages := Nil,
     dockerLabels := Map(
-      "name"        -> "lightbend/play-hello-certification",
+      "name"        -> "lightbend/play-openshift-example",
       "io.k8s.description" -> description.value,
       "description"        -> description.value,
       "vendor"      -> "Lightbend, Inc",
