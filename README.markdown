@@ -21,6 +21,20 @@ This runs Play on port 9000.
 
 Open http://localhost:9000/ in your browser, and Ctrl + C to quit.
 
+### Prerequisites to build
+
+- Java 8
+- Docker
+- sbt 1.2.1 or above
+
+### Build process
+
+Start sbt:
+
+```
+> Docker/publishLocal
+```
+
 ### Status
 
 Owner: Tooling team / Karl
